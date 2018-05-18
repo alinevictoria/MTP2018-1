@@ -1,3 +1,5 @@
+//Aluna: Aline Victória Machado Silva - 11721EBI006
+
 #include <stdio.h>
 
 void mostrabits(unsigned int numero, int tamanho) 
