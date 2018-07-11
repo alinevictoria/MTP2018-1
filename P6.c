@@ -2,81 +2,48 @@
 
 #include <stdio.h>
 
-int snum(int v[20], int x) 
+int soma(int a, int *b)
 
-	{
+{
 
-		
-        int p;
-	    if (x == 0) return 0;
+    if(a>0)
 
-	    else{
+        return *b+soma(a-1, b+1);
 
-		      p = snum(v, x-1);
+    else
 
-		      if (v[x-1] > 0)
+        return 0.0;
 
-			  	{
+}
 
-				  p += v[x-1];
+float media(int x, int y)
 
-				}
+{
 
-		      return (p);
+    return (float)x/(float)y;
 
-			}
+}
 
-	}
+int main ()
 
-float med(int snum, float j)
+{
 
-	{
+	int v[]={0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0};
 
-		float r;
+	int tamanho=0, c=0;
 
-		r = snum/j;
+	printf("Tamanho a ser somado:\n");
 
-		return r;
+	scanf("%d", &tamanho);
 
-	}
+	printf("\nValores: \n");
 
+	for (c=0; c<tamanho; c++) 
 
-int main()
+		scanf("%d", &v[c]);
 
-	{
+	printf("\nmedia = %f", media(soma(tamanho, v), tamanho));
 
-		int v[20],a,soma,quant;
+	return 0;
 
-	
-
-		float j;
-
-		printf("Quantidade de numeros: ");
-
-		scanf("%d", &quant);
-		
-        for(a=0; a<quant; a++)
-
-		{
-
-			printf("\n %d numero: ", a+1);
-
-			scanf("%d", &v[a]);
-
-			getchar();
-
-			if(v[a] != 0) 
-
-			j++;
-
-		}
-
-		soma = (snum (v, a) );
-
-		printf("\nA media dos numeros digitados eh: %f",med(soma, j));
-
-		
-
-		return 0;
-
-		}
+}
